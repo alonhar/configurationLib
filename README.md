@@ -44,3 +44,10 @@ git clone https://github.com/alonhar/configurationLib
 cd configurationLib/test
 node test.js
 ```
+
+-- no cache in configuration - getKey on empty cache 
+-- {key1:"a",key2:"b"} - try get key1. check equal to key1 === "a".
+-- update conf in the server to {key1:"x",key:"y"} - try get key1. check key1 ===  "a"
+-- try get key2 - check it equal to  "y"
+-- try get key3 - check it equal to  undefined.
+-- create new confObject - check that the conf is loaded from the cache file and key1 ==="x" && key2==="y" 
