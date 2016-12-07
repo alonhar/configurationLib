@@ -4,6 +4,7 @@
 ##Installation
 
 ```git clone https://github.com/alonhar/configurationLib```
+
 Put conflib.js inside you project.
 
 ```
