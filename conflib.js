@@ -29,7 +29,7 @@ class conflib {
                 return new Promise((resolve, reject) => resolve(undefined));
             }
 
-            let value = this.cache.conf[key];
+            let value = this.cache[key];
             this.alreadyUsedKeys[key] = value;
             return value;
         }
@@ -47,6 +47,7 @@ class conflib {
         })
     }
     readFile() {
+        // read the cach file and return  a promise.
         return new Promise((resolve, reject) => {
             jsonfile.readFile(filePath, (err, res) => {
                 if (err) {
@@ -65,13 +66,15 @@ class conflib {
         return new Promise(function(resolve, reject) {
             request.get(server + "/configuration", (err, res, body) => {
                 body = JSON.parse(body);
-                jsonfile.writeFile(filePath, body);
-                this.cache = body;
+                jsonfile.writeFile(filePath, body.conf);
+                this.cache = body.conf;
                 resolve();
             });
         }.bind(this));
     }
-
+    setServer(serverUrl) {
+      server = serverUrl
+    }
 
 }
 
