@@ -23,7 +23,7 @@ Put conflib.js inside you project.
 ###confObject.getKey(key)
 > the function recive a key and return the value of the key.
 > if the key is already in the values that already sent to the app it
-> it return the prev value.
+> and the cache was update from  the server,It will return the prev value.
 
 ###confObject.readFile()
 >  read the cach file and return  a promise.
