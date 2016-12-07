@@ -45,6 +45,7 @@ Put conflib.js inside you project.
 ###confObject.readFile() -- private function 
 >  read the cach file and return  a promise.
 #### Use
+
    ```
    confObject.readFile().then(function(){
   
@@ -64,7 +65,7 @@ Put conflib.js inside you project.
 ###confObject.setServer(serverUrl)
 > the function set the url of the server. The It will make http get request to `/configuration` to get the json.
 > server defualt value is `localhost:3000`
-> This is 
+
 
 
 ##Testing 
