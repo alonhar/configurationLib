@@ -18,6 +18,16 @@ Put conflib.js inside you project.
 ###confObject.init()  
 > this funciton init the object, This is like the constructor.
 > return promise after the read of the cached file.
+#### Use
+
+```
+   confObject.init().then(()=>{
+      //the lib is initialized.
+     
+   });
+
+
+```
 
 
 ###confObject.getKey(key)
@@ -32,16 +42,29 @@ Put conflib.js inside you project.
     });
  ```
 
-###confObject.readFile()
+###confObject.readFile() -- private function 
 >  read the cach file and return  a promise.
+#### Use
+   ```
+   confObject.readFile().then(function(){
+  
+   })
+   ```
 
 ###confObject.updateConfFromServer()
 >  make request for configuration from the server and save it to cache file.
+#### Use
 
+```
+  confObject.updateConfFromServer().then(function(){
+     // cache updated from the server. 
+  });
+ ```
 
 ###confObject.setServer(serverUrl)
 > the function set the url of the server. The It will make http get request to `/configuration` to get the json.
 > server defualt value is `localhost:3000`
+> This is 
 
 
 ##Testing 
